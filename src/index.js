@@ -3,8 +3,17 @@ import ReactDOM from "react-dom";
 import "./index.css";
 
 //My first component
+function TasksList() {
+  return (
+    <ul>
+      <li className="tasks-item">Follow Edukasyon.ph on Facebook.</li>
+      <li className="tasks-item">Follow AWS Siklab Pilipinas on Facebook.</li>
+      <li className="tasks-item">Follow Zuitt Coding Bootcamp on Facebook.</li>
+    </ul>
+  );
+}
 
-function HelloWorld() {
+function App() {
 	const paraStyle = {
 		"marginBottom" : "15px"
 	}
@@ -13,14 +22,10 @@ function HelloWorld() {
       <header className="app-header">
         <h1>My Amazing ToDo-List App</h1>
         <p style={paraStyle} >The most simple and amazing todo-list React app.</p>
-        <ul>
-        	<li className="tasks-item">Follow 1</li>
-        	<li className="tasks-item">Follow 2</li>
-        	<li className="tasks-item">Follow 3</li>
-        </ul>
+        <TasksList />
       </header>
     </div>
   );
 }
 
-ReactDOM.render(<HelloWorld></HelloWorld>, document.getElementById("root"));
+ReactDOM.render(<App></App>, document.getElementById("root"));
