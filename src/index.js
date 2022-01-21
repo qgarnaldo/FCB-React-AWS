@@ -3,13 +3,30 @@ import ReactDOM from "react-dom";
 import "./index.css";
 
 //My first component
+
+function Task(props){
+	return(
+		<li className="tasks-item">{props.taskName}</li>
+	);
+}
+
 function TasksList() {
+  const taskItemsList = [
+  "Follow 116464",
+  "Follow 2656464",
+  "follow 345454",
+  "Follow 45515"
+  ]; 
+
   return (
-    <ul>
-      <li className="tasks-item">Follow Edukasyon.ph on Facebook.</li>
-      <li className="tasks-item">Follow AWS Siklab Pilipinas on Facebook.</li>
-      <li className="tasks-item">Follow Zuitt Coding Bootcamp on Facebook.</li>
-    </ul>
+    <div>
+      <input className="task-input" />
+      <ul>
+        {taskItemsList.map((task, index) => {
+          return <Task key={index} taskName={task} />; 
+        })}
+      </ul>
+    </div>  
   );
 }
 
@@ -17,7 +34,9 @@ function App() {
 	const paraStyle = {
 		"marginBottom" : "15px"
 	}
-	return (
+
+
+return (
     <div className="app">
       <header className="app-header">
         <h1>My Amazing ToDo-List App</h1>
